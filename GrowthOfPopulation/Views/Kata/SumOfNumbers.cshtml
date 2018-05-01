@@ -1,0 +1,30 @@
+﻿@model GrowthOfPopulation.Models.SumOfNumbers
+
+@{
+    ViewData["Title"] = "Sum of Numbers";
+}
+
+<h2>Sum of Numbers</h2>
+
+@using (Html.BeginForm("SumOfNumbers", "Kata", FormMethod.Post))
+{
+    <table>
+        <tr>
+            <td>@Html.Label("", "First Number") </td>
+            <td>
+                @Html.TextBoxFor(m => m.Num1)
+            </td>
+        </tr>
+        <tr>
+            <td>@Html.Label("", "Second Number") </td>
+            <td>
+                @Html.TextBoxFor(m => m.Num2)
+            </td>
+        </tr>
+    </table>
+    <hr />
+    @Html.Label("", "Returned Sum:")
+    @ViewBag.Result
+    <br />
+    <input id="Submit" type="submit" value="submit" />
+}

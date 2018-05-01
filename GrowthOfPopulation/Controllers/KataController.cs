@@ -23,5 +23,19 @@ namespace GrowthOfPopulation.Controllers
 
             return View();
         }
+
+        public IActionResult SumOfNumbers()
+        {
+            return View();
+        }
+
+        [HttpPost]
+        public IActionResult SumOfNumbers(SumOfNumbers son)
+        {
+            int result = son.GetSum(son.Num1, son.Num2);
+            ViewBag.Result = result;
+
+            return View();
+        }
     }
 }
