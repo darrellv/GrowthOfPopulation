@@ -1,0 +1,24 @@
+﻿@model GrowthOfPopulation.Models.Duplicates
+
+@{
+    ViewData["Title"] = "DuplicatesInString";
+}
+
+<h2>DuplicatesInString</h2>
+
+@using (Html.BeginForm("DuplicatesInString", "DuplicatesInString", FormMethod.Post))
+{
+    <table>
+        <tr>
+            <td>@Html.Label("", "Input String") </td>
+            <td>
+                @Html.TextBoxFor(m => m.InputString)
+            </td>
+        </tr>
+    </table>
+    <hr />
+    @Html.Label("", "Number of duplicates:")
+    @ViewBag.DuplicateCount
+    <br />
+    <input id="Submit" type="submit" value="submit" />
+}

@@ -1,0 +1,30 @@
+﻿@model GrowthOfPopulation.Models.WhichAreIn
+
+@{
+    ViewData["Title"] = "Which Are In";
+}
+
+<h2>Which Are In</h2>
+
+@using (Html.BeginForm("WhichAreIn", "Kata", FormMethod.Post))
+{
+<table>
+    <tr>
+        <td>@Html.Label("", "Array1") </td>
+        <td>
+            @Html.TextBoxFor(m => m.A1)
+        </td>
+    </tr>
+    <tr>
+        <td>@Html.Label("", "Array2") </td>
+        <td>
+            @Html.TextBoxFor(m => m.A2)
+        </td>
+    </tr>
+</table>
+    <hr />
+    @Html.Label("", "Returned Array:")
+    @ViewBag.Result
+    <br />
+    <input id="Submit" type="submit" value="submit" />
+}

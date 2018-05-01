@@ -1,0 +1,42 @@
+﻿@model GrowthOfPopulation.Models.PopulationData
+
+@{
+    ViewData["Title"] = "Home Page";
+}
+
+@using (Html.BeginForm("Index", "Home", FormMethod.Post))
+{
+    <table>
+        <tr>
+            <td>Population: </td>
+            <td>
+                @Html.TextBoxFor(m => m.Population)
+            </td>
+            <td>Percent: </td>
+            <td>
+                @Html.TextBoxFor(m => m.Percent)
+            </td>
+        </tr>
+        <tr>
+            <td>Population Increase: </td>
+            <td>
+                @Html.TextBoxFor(m => m.InhabitantChange)
+            </td>
+            <td>Population to Surpass: </td>
+            <td>
+                @Html.TextBoxFor(m => m.PopulationToSurpass)
+            </td>
+        </tr>
+    </table>
+    <hr />
+    @Html.Label("", "Years to surpass population")
+    @ViewBag.Years
+    <br />
+    <input id="Submit" type="submit" value="submit" />
+}
+@*<br />
+<a href="http://localhost:60531/sumtwolowest/sumtwolowest">Sumtwolowest</a>
+<br />
+<a href="http://localhost:60531/duplicatesinstring/duplicatesinstring">DuplicatesInString</a>
+<br />
+<a href="http://localhost:60531/kata/WhichAreIn">Which Are In</a>*@

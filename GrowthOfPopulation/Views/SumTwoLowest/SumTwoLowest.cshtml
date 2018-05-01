@@ -1,0 +1,24 @@
+﻿@model GrowthOfPopulation.Models.SumOfLowest
+
+@{
+    ViewData["Title"] = "SumTwoLowest";
+}
+
+<h2>SumTwoLowest</h2>
+
+@using (Html.BeginForm("SumTwoLowest", "SumTwoLowest", FormMethod.Post))
+{
+    <table>
+        <tr>
+            <td>@Html.Label("", "Array of Integers") </td>
+            <td>
+                @Html.TextBoxFor(m => m.strLowest)
+            </td>
+        </tr>
+    </table>
+    <hr />
+    @Html.Label("", "Sum of two lowest in array: ")
+    @ViewBag.Result
+    <br />
+    <input id="Submit" type="submit" value="submit" />
+}
