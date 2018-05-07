@@ -1,0 +1,30 @@
+﻿@model GrowthOfPopulation.Models.MoveZeroesToEnd  
+
+@{
+    ViewData["Title"] = "Moving Zeroes to the End";
+}
+
+<h2>Moving Zeroes to the End</h2>
+
+@using (Html.BeginForm("MoveZeroesToEnd", "Kata", FormMethod.Post))
+{
+    <table>
+        <tr>
+            <td>@Html.Label("", "Comma delimeted list of integers:") </td>
+            <td>
+                @Html.TextBoxFor(n => n.NumberList)
+            </td>
+        </tr>
+    </table>
+    <hr />
+    @Html.Label("", "New array:")
+    @ViewBag.Result
+    <br />
+    <input id="Submit" type="submit" value="submit" />
+}
+<br />
+<pre>
+Write an algorithm that takes an array and moves all of the zeros to the end, preserving the order of the other elements.
+
+Kata.MoveZeroes(new int[] {1, 2, 0, 1, 0, 1, 0, 3, 0, 1}) => new int[] {1, 2, 1, 1, 3, 1, 0, 0, 0, 0}
+</pre>

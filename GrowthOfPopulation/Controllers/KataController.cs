@@ -7,8 +7,50 @@ using GrowthOfPopulation.Models;
 
 namespace GrowthOfPopulation.Controllers
 {
+
     public class KataController : Controller
     {
+
+
+        public IActionResult MoveZeroesToEnd()
+        {
+            return View();
+        }
+
+        [HttpPost]
+        public IActionResult MoveZeroesToEnd(MoveZeroesToEnd mz)
+        {
+            ViewBag.Result = mz.CovertArrayToString(mz.MoveZeroes(mz.ConvertNumberStringToArray(mz.NumberList)));
+
+            return View();
+        }
+
+        public IActionResult CountSmiles()
+        {
+            return View();
+        }
+
+        [HttpPost]
+        public IActionResult CountSmiles(CountSmilies cs)
+        {
+            ViewBag.Result = cs.CountSmileys(cs.ConvertStringToArray(cs.SmiliesIn));
+
+            return View();
+        }
+
+        public IActionResult WhoLikesIt()
+        {
+            return View();
+        }
+
+        [HttpPost]
+        public IActionResult WhoLikesIt(WhoLikesIt who)
+        {
+            ViewBag.Result = who.Likes();
+
+            return View();
+        }
+
         public IActionResult WhichAreIn()
         {
             return View();

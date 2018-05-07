@@ -1,0 +1,51 @@
+﻿@model GrowthOfPopulation.Models.WhoLikesIt 
+
+@{
+    ViewData["Title"] = "Who Likes It";
+}
+
+<h2>Who Likes It?</h2>
+
+@using (Html.BeginForm("WhoLikesIt", "Kata", FormMethod.Post))
+{
+    <table>
+        <tr>
+            <td>@Html.Label("", "Comma delimeted list of names:") </td>
+            <td>
+                @Html.TextBoxFor(n => n.Names)
+            </td>
+        </tr>
+    </table>
+    <hr />
+    @Html.Label("", "Returned string:")
+    @ViewBag.Result
+    <br />
+    <input id="Submit" type="submit" value="submit" />
+}
+<br />
+    <p>
+    Description:<br />
+You probably know the "like" system from Facebook and other pages. People can "like" blog posts, pictures or other items. We want to create the text that should be displayed next to such an item.
+        <br />
+Implement a function likes :: [String] -> String, which must take in input array, containing the names of people who like an item. It must return the display text as shown in the examples:
+<br />
+<ul>
+    <li>
+        Kata.Likes(new string[0]) => "no one likes this"
+    </li>
+    <li>
+        Kata.Likes(new string[] {"Peter"}) => "Peter likes this"
+    </li>
+    <li>
+        Kata.Likes(new string[] {"Jacob", "Alex"}) => "Jacob and Alex like this"
+    </li>
+    <li>
+        Kata.Likes(new string[] {"Max", "John", "Mark"}) => "Max, John and Mark like this"
+    </li>
+    <li>
+        Kata.Likes(new string[] {"Alex", "Jacob", "Mark", "Max"}) => "Alex, Jacob and 2 others like this"
+    </li>
+</ul>
+        <br />
+For 4 or more names, the number in and 2 others simply increases.
+        </p>
